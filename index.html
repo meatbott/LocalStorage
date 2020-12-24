@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Webpage Title</title>
+    <title>Territory Idle Companion</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nathan Heck">
-    <meta name="description" content="A thorough description of this webpage that will show up as a brief snippet on google.">
-    <meta name="keywords" content="search, engine, optimization, words">
+    <meta name="description" content="First attempt to utilize LocalStorage">
+    <meta name="keywords" content="local storage, persist changes, territory idle">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/stylesheet.css">
   </head>
   <body>
-    <script src="js/app.js"></script>
+    <div class="container create-button-holder">
+      <div class="container title-value">
+      <label for="title-input">Title</label> <input type="text" id="title-input" name="title-input">
+      </div>
+      <button class="button create-card" id="create-card">Create Card</button>
+    </div>
+    <div class="container" id="main-container">
+      <div class="container card-template" id="proto-card">
+        <div class="container card-header">
+          <h2 class="heading">Title of Card: A Name for this iteration</h2>
+          <p class="info date">MM/DD/YYYY</p>
+          <p class="info iteration">Sail Away:<span> 14</span></p>
+          <p class="info surveyer-count">Surveyers:<span> 29</span></p>
+          <p class="info headhunter-count">Headhunters:<span> 45</span></p>
+          <p class="info cultist-count">Cultists:<span> 78</span></p>
+          <p class="info nurse-count">Nurses:<span> 4</span</p>
+        </div>
+        <div class="container card-body">
+          <p class="info tile-count">Tiles:<span> 72</span></p>
+          <p class="info heritage">Heritage:<span> Sacred Path</span></p>
+          <p class="info gold-count">Gold:<span> 56.2B</span></p>
+          <p class="info ship-count">Ships:<span> 1000/750</span></p>
+          <p class="info amber-count">Amber:<span> 534</span></p>
+          <p class="info mentorship-cost">Mentorship Cost:<span> 800.3B</span></p>
+        </div>
+        <div class="container card-relics">
+            <span class="spanner"><p class="info relic-level">Relics:</p>
+            <p class="info forest-relic">Forest:<span> 13</span></p>
+            <p class="info chicken-relic">Chicken:<span> 14</span></p>
+            <p class="info stone-relic">Stone:<span> 11</span></p>
+            <p class="info oni-relic">Oni:<span> 10</span></p>
+            <p class="info frog-relic">Frog:<span> 14</span></p>
+            </span>
+        </div>
+        <p class="info card-comments">Comments:<span>Check out this idea!</span></p>
+        <div class="container button-holder">
+          <button class="button update">Update</button>
+          <button class="button save">Save</button>
+          <button class="button delete">Delete</button>
+        </div>
+      </div>
+    </div>
     <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
