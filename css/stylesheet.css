@@ -5,6 +5,7 @@
 }
 
 #main-container {
+  font-family: cursive;
   display: flex;
   border: 2px solid goldenrod;
   flex-wrap: wrap;
@@ -25,13 +26,23 @@
 }
 
 .create-button-holder {
+  display: flex;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
   width: 500px;
   border: 1px solid orange;
+  align-content: space-between;
+  text-align: center;
 }
 
+#form-structure .container{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
 .card-header,.card-body,.card-relics {
   border: 1px dashed purple;
 }
