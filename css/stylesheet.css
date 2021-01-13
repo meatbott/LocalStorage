@@ -33,15 +33,34 @@
   padding: 10px;
   width: 500px;
   border: 1px solid orange;
-  align-content: space-between;
-  text-align: center;
+  /*align-items: flex-start;*/
+  /*justify-content: center;*/
+  /*text-align: right;*/
+}
+
+
+#date-input, #comment-input {
+  width: 143px;
+}
+
+#create-card {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#date-input:focus {
+  background-color: rgba(195, 237, 74, 0.8);
 }
 
 #form-structure .container{
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  /*display: flex;
+  text-align: left;*/
+  text-align: right;
+  align-self: center;
+  border: solid black 1px;
 }
 .card-header,.card-body,.card-relics {
   border: 1px dashed purple;

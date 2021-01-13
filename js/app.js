@@ -5,10 +5,13 @@
 
         Also a way to reorganize the cards by different stats and a data display of
         a chart over time --data visualization-- would be a neat feature.
+
+        Ok also I need to create a better template(?) or prototype object to base the formBuild
+        function off of.
 */
 let expDiv = document.getElementById("expDiv");
 let mainContainer = document.getElementById("main-container");
-let formStructure = document.getElementById("form-structure");
+let formHolder = document.getElementById("form-holder");
 let saveFile = localStorage;
 let createCard = document.getElementById("create-card");
 
@@ -18,24 +21,37 @@ let createElements = function(elem, cls, content){
   newElem.classList.add(...cls);
   newElem.innerText = content;
   return newElem;
-}
+};
+
+let capitalize = function(word){
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
 
 let formBuild = function(){
-  for(thing in new Card){
-    let newItem = createElements("div", [`${thing}-value`,"container"],"");
-    formStructure.append(newItem);
-    let newLabel = createElements("label",[],thing);
-    //capitalize label content
+  for(let thing in formTemplate){
+    let thisThing = formTemplate[thing];
+    let newItem = createElements("div", ["container"],"");
+    formHolder.append(newItem);
+    let newLabel = createElements("label",[],`${thisThing.name}: `);
     newLabel.htmlFor = `${thing}-input`;
     newItem.append(newLabel);
-    let newInput = createElements("input",[],"");
+    let newInput = createElements(`${thisThing.input}`,[],"");
     newInput.id = `${thing}-input`;
     newInput.name = `${thing}-input`;
+    newInput.type = `${thisThing.type}`;
     newItem.append(newInput);
-  }
-}
+  };
+};
 
 formBuild();
+
+/*let adjustForm = function(){
+  let commentField = document.getElementById("comments-input");
+  //commentField.type = "number";
+  console.log(commentField.type);
+};
+
+adjustForm();*/
 
 let makeNewCard = function(){
   let newDiv = document.createElement("div");
