@@ -1,3 +1,17 @@
+/*TODO: Install breakpoints on small screen to align text left side and/or
+        change the size of the input fields.
+
+        Create color scheme that isnt absolute garbage.
+
+        Give shape and padding/margins to elements for aesthetics.
+
+        Work with fonts to see if it helps.
+
+        Sell this bitch for big money.
+
+        Creat a bunch of icons. Yes not for this project, but in general I need more icons.
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -7,22 +21,29 @@
 #main-container {
   font-family: cursive;
   display: flex;
-  border: 2px solid goldenrod;
+  border: 2px solid blue;
   flex-wrap: wrap;
-  width: 750px;
+  max-width: 50%;
   background-color: rgba(200, 156, 146, 0.87);
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 35px;
   resize: both;
   overflow: auto;
 }
 
 .new-div {
-  width: 200px;
-  height: 400px;
+  /* The height and width dimensions are placeholders only */
+  /*width: 200px;
+  height: 400px;*/
   background-color: rgba(152, 110, 152, 0.78);
   border: 1px solid blue;
   flex: 1 1 auto;
+}
+
+input {
+  text-align: right;
 }
 
 .create-button-holder {
@@ -30,8 +51,9 @@
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 35px;
   padding: 10px;
-  width: 500px;
+  max-width: 25%;
   border: 1px solid orange;
   /*align-items: flex-start;*/
   /*justify-content: center;*/
@@ -44,7 +66,7 @@
 }
 
 #create-card {
-  width: 50%;
+  width: 143px;
   margin-left: auto;
   margin-right: auto;
 }

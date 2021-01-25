@@ -1,124 +1,118 @@
 //Data.js//
-/*let newCard = {
-    "heading": {name: "Title of Card",
-                input: "input",
-                type: "text"
-                }",
-    "date": "MM/DD/YYYY",
-    "iteration": "14",
-    "surveyer": "29",
-    "headhunter": "45",
-    "cultist": "78",
-    "nurse": "4",
-    "tile": "72",
-    "heritage": "Sacred Path",
-    "gold": "56.2B",
-    "ship": "1000/750",
-    "amber": "534",
-    "mentorship": "800.3B",
-    "forest": "13",
-    "chicken": "14",
-    "stone": "11",
-    "oni": "10",
-    "frog": "14",
-    "comments": "Check out this idea!"
-}*/
 
-let formTemplate ={
+const formTemplate ={
   heading: {
           name: "Heading",
           type: "text",
-          input: "input"
+          input: "input",
+          element: "h2"
    },
   date: {
           name: "Date",
           type: "date",
-          input: "input"
+          input: "input",
+          element: "p"
   },
   iteration: {
           name: "Iteration",
           type: "number",
-          input: "input"
+          input: "input",
+          element: "p"
   },
   surveyer: {
           name: "Surveyers",
           type: "number",
-          input: "input"
+          input: "input",
+          element: "p"
   },
   headhunter: {
            name: "Headhunters",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   cultist: {
            name: "Cultists",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   nurse: {
            name: "Nurses",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   tile: {
            name: "Tiles",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   heritage: {
            name: "Heritage",
            type: "text",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   gold: {
            name: "Gold",
            type: "text",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   amber: {
            name: "Amber",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   mentor: {
            name: "Mentorship Cost",
            type: "text",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   forest: {
            name: "Forest Relic",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   chicken: {
            name: "Chicken Relic",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   stone: {
            name: "Stone Relic",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   oni: {
            name: "Oni Relic",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   frog: {
            name: "Frog Relic",
            type: "number",
-           input: "input"
+           input: "input",
+           element: "p"
   },
   comment: {
            name: "Comments",
            type: "text",
-           input: "textarea"
+           input: "textarea",
+           element: "p"
   }
 };
 
-function Card(heading, date, iteration, surveyer, headhunter, cultist, nurse, tile, heritage,
-gold, ship, amber, mentorship, forest, chicken, stone, oni, frog, comments){
+function Card([heading, date, iteration, surveyer, headhunter, cultist, nurse, tile, heritage,
+gold, amber, mentorship, forest, chicken, stone, oni, frog, comments]){
   this.heading = heading;
   this.date = date;
   this.iteration = iteration;
