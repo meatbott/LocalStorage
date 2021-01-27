@@ -1,9 +1,5 @@
 //App.js//
-/*TODO: Storage solution obviously. That is the main goal for this experiment. It
-        turns out that just working with key-value pairs without some string parsing will be
-        more involved than it seems on the surface.
-
-        Also a way to reorganize the cards by different stats and a data display of
+/*TODO: Also a way to reorganize the cards by different stats and a data display of
         a chart over time --data visualization-- would be a neat feature.
 
         Ok also I need to create a better template(?) or prototype object to base the formBuild
@@ -43,25 +39,59 @@ const formBuild = function(){
 
 formBuild();
 
+/*save function: I will have an Object based off input values. I will JSON.stringify(values)
+ and then save that resulting string as a key value in the localStorage Object.
+
+I will need a safeguard against naming a heading the same as an exisitng heading so the data
+does NOT get overwritten. If two object keys are the same, the first one gets replaced by
+the second one.
+*/
+
+/*Needs a build function that can be reused rather than creating a new one every time I need
+to create cards and such*/
+
+let populate = function(){
+  for(card in saveFile)
+  if(typeof saveFile[card]=="string"){
+    let mainContainer = document.getElementById("main-container");
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("new-div","card-template");
+    let jasonObj = JSON.parse(saveFile[card]);
+    for(prop in jasonObj){
+    newDiv.append(createElements(`${formTemplate[prop].element}`,["result"],`${formTemplate[prop].name}: ${jasonObj[prop]}`));
+    mainContainer.prepend(newDiv);
+    }
+  }
+};
+
+window.onload = populate();
+
+let creation = function(){};
+
 const makeNewCard = function(){
   let mainContainer = document.getElementById("main-container");
-  let formHolder = document.getElementById("form-holder");
   let newDiv = document.createElement("div");
   newDiv.classList.add("new-div","card-template");
   let valuesInput = document.querySelectorAll("input");
   let textArea = document.querySelectorAll("textarea");
   let wholeArray = [...valuesInput, ...textArea];
-  console.log(wholeArray[0].value);
+  let arr = [];
   for(let i=0; i<wholeArray.length; i++){
     let presentValue = wholeArray[i];
     let presentValueText = presentValue.value;
+    arr.push(presentValueText);
     newDiv.append(createElements(`${presentValue.dataset.element}`,["result"],`${presentValue.dataset.prefix}: ${presentValueText}`));
     mainContainer.prepend(newDiv);
     presentValue.value= "";
   };
+  let objCard = new Card(...arr);
+  let objStr = JSON.stringify(objCard);
+  saveFile.setItem(arr[0], objStr);
+  console.log(saveFile);
 };
 
 createCardButton.addEventListener("click", makeNewCard);
+
 /*I want to get the new card function to be working for all fields. Then I want
 to add a layer of protection by making fields required and host a popup modal That
 will ask to verify the input data before sending it to be saved and displayed. This

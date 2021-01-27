@@ -111,8 +111,8 @@ const formTemplate ={
   }
 };
 
-function Card([heading, date, iteration, surveyer, headhunter, cultist, nurse, tile, heritage,
-gold, amber, mentorship, forest, chicken, stone, oni, frog, comments]){
+function Card(heading, date, iteration, surveyer, headhunter, cultist, nurse, tile, heritage,
+gold, amber, mentor, forest, chicken, stone, oni, frog, comment){
   this.heading = heading;
   this.date = date;
   this.iteration = iteration;
@@ -124,11 +124,11 @@ gold, amber, mentorship, forest, chicken, stone, oni, frog, comments]){
   this.heritage = heritage;
   this.gold = gold;
   this.amber = amber;
-  this.mentorship = mentorship;
+  this.mentor = mentor;
   this.forest = forest;
   this.chicken = chicken;
   this.stone = stone;
   this.oni = oni;
   this.frog = frog;
-  this.comments = comments;
+  this.comment = comment;
 }

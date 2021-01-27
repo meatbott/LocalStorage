@@ -34,9 +34,6 @@
 }
 
 .new-div {
-  /* The height and width dimensions are placeholders only */
-  /*width: 200px;
-  height: 400px;*/
   background-color: rgba(152, 110, 152, 0.78);
   border: 1px solid blue;
   flex: 1 1 auto;
@@ -55,9 +52,6 @@ input {
   padding: 10px;
   max-width: 25%;
   border: 1px solid orange;
-  /*align-items: flex-start;*/
-  /*justify-content: center;*/
-  /*text-align: right;*/
 }
 
 
@@ -76,10 +70,6 @@ input {
 }
 
 #form-structure .container{
-  /*margin-left: auto;
-  margin-right: auto;*/
-  /*display: flex;
-  text-align: left;*/
   text-align: right;
   align-self: center;
   border: solid black 1px;
