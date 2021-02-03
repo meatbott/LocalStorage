@@ -1,15 +1,4 @@
-/*TODO: Install breakpoints on small screen to align text left side and/or
-        change the size of the input fields.
-
-        Create color scheme that isnt absolute garbage.
-
-        Give shape and padding/margins to elements for aesthetics.
-
-        Work with fonts to see if it helps.
-
-        Sell this bitch for big money.
-
-        Creat a bunch of icons. Yes not for this project, but in general I need more icons.
+/*TODO: Create a bunch of icons. Yes not for this project, but in general I need more icons.
 */
 
 * {
@@ -18,29 +7,22 @@
   box-sizing: border-box;
 }
 
-#main-container {
-  font-family: cursive;
-  display: flex;
-  border: 2px solid blue;
-  flex-wrap: wrap;
-  max-width: 50%;
-  background-color: rgba(200, 156, 146, 0.87);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-  margin-bottom: 35px;
-  resize: both;
-  overflow: auto;
+body {
+  background-color: #026873;
+  background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+  linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+  linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+  linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+  background-size: 13px, 29px, 37px, 53px;
 }
 
-.new-div {
-  background-color: rgba(152, 110, 152, 0.78);
-  border: 1px solid blue;
-  flex: 1 1 auto;
+input, textarea {
+  border-radius: 8px;
 }
 
-input {
-  text-align: right;
+label {
+  color: rgb(6, 3, 24);
+  font-size: 1.25em;
 }
 
 .create-button-holder {
@@ -50,35 +32,100 @@ input {
   margin-right: auto;
   margin-top: 35px;
   padding: 10px;
-  max-width: 25%;
-  border: 1px solid orange;
+  max-width: 30%;
+  border-radius: 15px;
+  background-color: rgb(198, 211, 236);
 }
 
+#form-holder .container{
+  font-family: Georgia Arial sans-serif;
+  color: rgb(13, 26, 45);
+  padding: 4px;
+  box-shadow: 0 0 2px blue;
+  background-color: rgb(106, 175, 204);
+  text-align: right;
+  align-self: center;
+  border: 2px solid blue;
+  border-radius: 12px;
+  margin-bottom: 3px;
+}
+
+#create-card {
+  width: 143px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(153, 179, 212);
+  border: 0;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+#main-container {
+  font-family: DejaVu Sans Mono;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  resize: both;
+  overflow: auto;
+}
+
+.new-div {
+  font-family: sans-serif;
+  background-color: rgb(156, 210, 244);
+  border: 1px solid blue;
+  flex: 1 1 auto;
+  border-radius: 10px;
+  margin: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 3px blue;
+  max-width: 33%;
+}
+
+.result {
+  padding: 3px 5px;
+}
+
+p.result{
+  font-weight: 125;
+  font-size: 1.15em;
+}
 
 #date-input, #comment-input {
   width: 143px;
 }
 
-#create-card {
-  width: 143px;
-  margin-left: auto;
-  margin-right: auto;
+#create-card:hover{
+  background-color: rgb(84, 175, 204);
+  cursor: pointer;
 }
 
-#date-input:focus {
+input:focus, textarea:focus {
   background-color: rgba(195, 237, 74, 0.8);
 }
 
-#form-structure .container{
-  text-align: right;
-  align-self: center;
-  border: solid black 1px;
-}
-.card-header,.card-body,.card-relics {
-  border: 1px dashed purple;
+@media screen and (max-width: 1008px){
+  .create-button-holder{
+    max-width: 40%;
+  }
+
+  .new-div {
+    max-width: 50%;
+  }
 }
 
-.card-template {
-  background-color: rgba(74, 170, 187, 0.75);
-  flex: 1 1 auto;
+@media screen and (max-width: 759px){
+  .create-button-holder {
+    max-width: 60%;
+  }
+
+  .new-div {
+    max-width: 100%;
+  }
 }

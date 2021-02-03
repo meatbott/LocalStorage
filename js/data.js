@@ -68,7 +68,7 @@ const formTemplate ={
            element: "p"
   },
   mentor: {
-           name: "Mentorship Cost",
+           name: "Mentorship",
            type: "text",
            input: "input",
            element: "p"

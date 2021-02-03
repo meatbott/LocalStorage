@@ -39,29 +39,33 @@ const formBuild = function(){
 
 formBuild();
 
-/*save function: I will have an Object based off input values. I will JSON.stringify(values)
- and then save that resulting string as a key value in the localStorage Object.
-
-I will need a safeguard against naming a heading the same as an exisitng heading so the data
+/* I will need a safeguard against naming a heading the same as an exisitng heading so the data
 does NOT get overwritten. If two object keys are the same, the first one gets replaced by
-the second one.
+the second one currently.
 */
 
 /*Needs a build function that can be reused rather than creating a new one every time I need
 to create cards and such*/
 
 let populate = function(){
+  let orgArr = [];
   for(card in saveFile)
   if(typeof saveFile[card]=="string"){
     let mainContainer = document.getElementById("main-container");
     let newDiv = document.createElement("div");
-    newDiv.classList.add("new-div","card-template");
+    newDiv.classList.add("new-div");
     let jasonObj = JSON.parse(saveFile[card]);
+    orgArr.push(jasonObj);
     for(prop in jasonObj){
     newDiv.append(createElements(`${formTemplate[prop].element}`,["result"],`${formTemplate[prop].name}: ${jasonObj[prop]}`));
     mainContainer.prepend(newDiv);
-    }
-  }
+    };
+  };
+  /* Working on a sort feature here.
+  orgArr.sort(function(a,b){
+    return a-b;
+  })
+  console.log(orgArr);*/
 };
 
 window.onload = populate();
@@ -71,7 +75,7 @@ let creation = function(){};
 const makeNewCard = function(){
   let mainContainer = document.getElementById("main-container");
   let newDiv = document.createElement("div");
-  newDiv.classList.add("new-div","card-template");
+  newDiv.classList.add("new-div");
   let valuesInput = document.querySelectorAll("input");
   let textArea = document.querySelectorAll("textarea");
   let wholeArray = [...valuesInput, ...textArea];
@@ -97,6 +101,4 @@ to add a layer of protection by making fields required and host a popup modal Th
 will ask to verify the input data before sending it to be saved and displayed. This
 can be achieved by instead of calling the makeNewCard function directly from the
 createCardButton it calls a separate function containing the values for the variables
-in the makeNewCard function first.
-
-I still need to get a save function going on as well.*/
+in the makeNewCard function first.*/
