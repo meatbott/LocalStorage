@@ -1,5 +1,4 @@
-/*TODO: Create a bunch of icons. Yes not for this project, but in general I need more icons.
-*/
+/*Descending order based on page position/specificity*/
 
 * {
   margin: 0;
@@ -61,6 +60,10 @@ label {
   border-radius: 10px;
 }
 
+#form-holder .container:hover, #form-holder .container:active{
+  background-color: rgb(187, 206, 240);
+}
+
 #main-container {
   font-family: DejaVu Sans Mono;
   display: flex;
@@ -89,7 +92,7 @@ label {
 }
 
 .result {
-  padding: 3px 5px;
+  padding: 5px 12px;
 }
 
 p.result{
@@ -102,13 +105,16 @@ p.result{
 }
 
 #create-card:hover{
-  background-color: rgb(84, 175, 204);
+  background-color: rgba(195, 237, 74, 0.8);
   cursor: pointer;
 }
 
 input:focus, textarea:focus {
   background-color: rgba(195, 237, 74, 0.8);
 }
+
+
+/*Breakpoints for 3 normal sized screens, desktop, tablet, mobile*/
 
 @media screen and (max-width: 1008px){
   .create-button-holder{

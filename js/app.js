@@ -4,6 +4,9 @@
 
         Ok also I need to create a better template(?) or prototype object to base the formBuild
         function off of.
+
+        2/9/2021: Success in implementing ordered display! Now the cards show up in descending ordered
+        by age by default. Adding a self-sort by different parameters would be the next thing to do.
 */
 let expDiv = document.getElementById("expDiv");
 let saveFile = localStorage;
@@ -15,8 +18,6 @@ const createElements = function(elem, cls, content){
   newElem.innerText = content;
   return newElem;
 };
-
-
 
 const formBuild = function(){
   let formHolder = document.getElementById("form-holder");
@@ -47,30 +48,31 @@ the second one currently.
 /*Needs a build function that can be reused rather than creating a new one every time I need
 to create cards and such*/
 
-let populate = function(){
+const populate = function(){
   let orgArr = [];
+  let mainContainer = document.getElementById("main-container");
+
   for(card in saveFile)
   if(typeof saveFile[card]=="string"){
-    let mainContainer = document.getElementById("main-container");
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("new-div");
     let jasonObj = JSON.parse(saveFile[card]);
     orgArr.push(jasonObj);
-    for(prop in jasonObj){
-    newDiv.append(createElements(`${formTemplate[prop].element}`,["result"],`${formTemplate[prop].name}: ${jasonObj[prop]}`));
-    mainContainer.prepend(newDiv);
-    };
   };
-  /* Working on a sort feature here.
-  orgArr.sort(function(a,b){
-    return a-b;
-  })
-  console.log(orgArr);*/
+
+  orgArr.sort(function(a, b){
+    return a.iteration - b.iteration;
+  });
+
+  for(obj in orgArr){
+  let newDiv = document.createElement("div");
+  newDiv.classList.add("new-div");
+  let thisObj = orgArr[obj];
+  for(prop in thisObj)
+  newDiv.append(createElements(`${formTemplate[prop].element}`,["result"],`${formTemplate[prop].name}: ${thisObj[prop]}`));
+  mainContainer.prepend(newDiv);
+  };
 };
 
 window.onload = populate();
-
-let creation = function(){};
 
 const makeNewCard = function(){
   let mainContainer = document.getElementById("main-container");
@@ -95,6 +97,8 @@ const makeNewCard = function(){
 };
 
 createCardButton.addEventListener("click", makeNewCard);
+
+
 
 /*I want to get the new card function to be working for all fields. Then I want
 to add a layer of protection by making fields required and host a popup modal That
