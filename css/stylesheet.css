@@ -13,6 +13,30 @@ body {
   linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
   linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
   background-size: 13px, 29px, 37px, 53px;
+  /*background image c/o https://projects.verou.me/css3patterns/#cicada-stripes*/
+}
+
+header, footer{
+  background-color: black;
+  position: sticky;
+  top: 0px;
+}
+
+#menu-bar, #bottom-menu-bar {
+  font-family: Arial, sans-serif;
+  font-size: 1.25em;
+  color: rgb(175, 208, 232);
+  display: flex;
+  padding: 20px;
+}
+
+#menu-bar p, #bottom-menu-bar p {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+#title-text a {
+  color: inherit;
 }
 
 input, textarea {
@@ -74,7 +98,6 @@ label {
   margin-right: auto;
   margin-top: 40px;
   margin-bottom: 35px;
-  resize: both;
   overflow: auto;
 }
 
@@ -88,7 +111,8 @@ label {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 3px blue;
-  max-width: 33%;
+  max-width: 30%;
+  height: 100%;
 }
 
 .result {
@@ -122,7 +146,7 @@ input:focus, textarea:focus {
   }
 
   .new-div {
-    max-width: 50%;
+    max-width: 45%;
   }
 }
 

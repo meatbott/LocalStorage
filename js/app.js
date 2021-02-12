@@ -51,6 +51,7 @@ to create cards and such*/
 const populate = function(){
   let orgArr = [];
   let mainContainer = document.getElementById("main-container");
+  let currentDate = document.getElementById("current-date");
 
   for(card in saveFile)
   if(typeof saveFile[card]=="string"){
